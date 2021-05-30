@@ -18,8 +18,8 @@ public class PostController {
 
     @GetMapping("/")
     public ModelAndView zakladniZobrazeni(@PageableDefault Pageable pageable) {
-        return new ModelAndView("posty")
-                .addObject("posty", service.list(pageable));
+        return new ModelAndView("index")
+                .addObject("post", service.list(pageable));
     }
 
 }
