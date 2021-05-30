@@ -6,12 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
-<body >
-    <h1>Tady bude můj blog…</h1>
-<div >Tady bude perex</div>
-<div>tady zbytek textu</div>
-
-
+<body bgcolor="#faebd7" >
     <h1>Seznam blogu</h1>
     <table class="u-full-width">
         <thead>
@@ -19,17 +14,19 @@
             <th>autor</th>
             <th>Nazev clanku</th>
             <th>Datum publikovani</th>
+            <th> na článek</th>
                    </tr>
         </thead>
         <tbody>
-        <!--/*@thymesVar id="posty" type=""*/-->
+
         <tr th:each="post: ${post}">
             <td th:text="${post.author}">Jmeno autora</td>
             <td th:utext="${post.title}">nazev blogu</td>
             <td th:utext="${#temporals.format(post.published, 'd. MMMM yyyy')}">1370</td>
+            <td bgcolor="#7fffd4" > <a th:href="@{/post/{slugPart}(slugPart=${post.slug})}">Přečíst</a></td>
         </tr>
         </tbody>
 
- <!--!   <a th:href="@{/post/{slugPart}(slugPart=${post.slug})}">Přečíst...</a>-->
+
 </body>
 </html>

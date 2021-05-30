@@ -22,13 +22,9 @@ public Page<Post> list(Pageable pageable){
 }
 
 
- public String singlePost(String slug){
-     return null;
+ public Page<Post> singlePost(String slug ){
+     return postRepository.findBySlug(slug);
  }
  
- 
-//    Ve službě PostService vytvoř metodu list(),
-//    která bude vracet seznam všech postů (zatím bez stránkování a řazení).
-//    Dále tam vytvoř metodu singlePost(String slug),
-//    která najde jeden post podle zadaného slug a ten vrátí.
+
 }

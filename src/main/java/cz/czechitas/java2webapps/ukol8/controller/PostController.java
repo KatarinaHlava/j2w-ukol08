@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -22,6 +23,12 @@ public class PostController {
                 .addObject("post", service.list(pageable));
     }
 
+    @GetMapping(value = "/post",params ={"/"} )
+    public  ModelAndView detailClanku(@PageableDefault Pageable pageable,
+                                                @RequestParam("/") String slugPart ){
+        return new ModelAndView("post")
+                .addObject("post",service.singlePost(slugPart));
+    }
 }
 //    Vytvoř controller a v něm dvě metody, pro zobrazení úvodí stránky se seznamem postů a
 //    pro zobrazení jednoho kompletního postu. Controller bude používat službu PostService,
