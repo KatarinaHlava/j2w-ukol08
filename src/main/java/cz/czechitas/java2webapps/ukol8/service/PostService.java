@@ -32,11 +32,3 @@ public class PostService {
     }
 
 }
-//
-//    Uprav metodu list() v PostService tak, aby používala Pageable a omezila výsledek na 20 záznamů.
-//        Pro vytvoření správného Pageable použij statickou metodu PageRequest.of(0, 20).
-//        Vytvoř v repository metodu, která bude vracet Page, bude používat Pageable pro omezení počtu záznamů,
-//        načte pouze posty, které mají datum publikace a není v budoucnosti,
-//        a seřadí záznamy sestupně podle data publikace.
-//        Pro řazení se nebude používat položka sort z Pageable,
-//        ale použije se správný název metody v repository.
