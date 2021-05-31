@@ -28,7 +28,7 @@ public class PostController {
     public  ModelAndView detailClanku(@PageableDefault Pageable pageable,
                                                @PathVariable("id") String slugPart ){
         return new ModelAndView("post")
-                .addObject("post",service.singlePost(slugPart,pageable));
+                .addObject("post",service.singlePost(slugPart));
     }
 
 }

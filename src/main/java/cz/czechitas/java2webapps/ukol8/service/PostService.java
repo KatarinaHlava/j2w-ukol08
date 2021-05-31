@@ -22,8 +22,8 @@ public Page<Post> list(Pageable pageable){
 }
 
 
- public Page<Post> singlePost(String slug,Pageable pageable ){
-     return postRepository.findBySlug(slug, pageable);
+ public Post singlePost(String slug){
+     return postRepository.findBySlug(slug);
  }
  
 

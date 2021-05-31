@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 public interface PostRepository extends JpaRepository<Post, Long> {
 
 @Query
-Page<Post> findBySlug(String slug, Pageable pageable);
+Post findBySlug(String slug);
 
 
 }
