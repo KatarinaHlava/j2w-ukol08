@@ -22,7 +22,7 @@ public class PostService {
 
     public Page<Post> list(Pageable pageable) {
         PageRequest.of(0, 20);
-        LocalDate datum = LocalDate.now();
+        LocalDate datum = LocalDate.now().plusDays(1);
         return postRepository.findByPublishedBefore(datum, pageable);
     }
 
